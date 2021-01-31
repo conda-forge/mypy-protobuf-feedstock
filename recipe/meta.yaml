@@ -1,5 +1,5 @@
 {% set name = "mypy-protobuf" %}
-{% set version = "1.23" %}
+{% set version = "1.24" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cf79c77e828a2de9bdc74b43ad4abd4c2a3a30f0471b46e9b4e01b9877f166fb
+  sha256: 5637376deba46b68dec62bad75b8655a5f328ecdedd6a5e78c50a68326391c61
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - protoc-gen-mypy = mypy_protobuf:main
 
@@ -36,7 +36,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'Generate mypy stub files from protobuf specs'
+  summary: Generate mypy stub files from protobuf specs
 
 extra:
   recipe-maintainers:
