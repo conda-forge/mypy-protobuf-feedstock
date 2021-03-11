@@ -1,44 +1,46 @@
 {% set name = "mypy-protobuf" %}
 {% set version = "2.4" %}
 
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mypy-protobuf-{{ version }}.tar.gz
   sha256: 77e10c476cdd3ee14535c2357e64deac6b1a69f33eb500d795b064acda48c66f
 
 build:
+  number: 1
   noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - protoc-gen-mypy = mypy_protobuf:main
+    - protoc-gen-mypy = mypy_protobuf.main:main
+    - protoc-gen-mypy_grpc = mypy_protobuf.main:grpc
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3
     - pip
-    - setuptools
+    - python >=3.6
   run:
-    - python >=3
-    - protobuf
-    - six
-    - setuptools
+    - protobuf >=3.14.0
+    - python >=3.6
 
 test:
   imports:
     - mypy_protobuf
+    - mypy_protobuf.extensions_pb2
   commands:
-    - which protoc-gen-mypy
+    - cat /dev/null | protoc-gen-mypy
+    - cat /dev/null | protoc-gen-mypy_grpc
+  requires:
+    - pip
 
 about:
   home: https://github.com/dropbox/mypy-protobuf
-  license: Apache-2.0
-  license_family: Apache
-  license_file: LICENSE
   summary: Generate mypy stub files from protobuf specs
+  license: Apache-2.0
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
