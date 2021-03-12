@@ -33,6 +33,7 @@ test:
   commands:
     - cat /dev/null | protoc-gen-mypy
     - cat /dev/null | protoc-gen-mypy_grpc
+    - pip check
   requires:
     - pip
 
