@@ -36,6 +36,7 @@ Installing `mypy-protobuf` from the `conda-forge` channel can be achieved by add
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `mypy-protobuf` can be installed with:
