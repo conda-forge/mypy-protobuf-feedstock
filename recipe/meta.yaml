@@ -1,5 +1,5 @@
 {% set name = "mypy-protobuf" %}
-{% set version = "2.5" %}
+{% set version = "2.6" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mypy-protobuf-{{ version }}.tar.gz
-  sha256: 4d7a74890ea76f61ec7f5f30b275c389172366fcdabe8c3b416cd9e8892d9e52
+  sha256: 28027d555b0db402a00584ae6f6ab8b3b689f18a22b4e870b30bdd797b2f9783
 
 build:
   number: 0
