@@ -23,7 +23,7 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - protobuf >=3.14.0
+    - protobuf >=3.17.3
     - python >=3.6
     - types-protobuf
 
