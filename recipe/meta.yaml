@@ -24,7 +24,7 @@ requirements:
     - python >=3.6
   run:
     - python >=3.6
-    - protobuf >=3.19.3
+    - protobuf >=4.23.4
     - types-protobuf >=3.19.5
 
 test:
