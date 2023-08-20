@@ -1,11 +1,11 @@
-About mypy-protobuf
-===================
+About mypy-protobuf-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mypy-protobuf-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/dropbox/mypy-protobuf
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mypy-protobuf-feedstock/blob/main/LICENSE.txt)
 
 Summary: Generate mypy stub files from protobuf specs
 
