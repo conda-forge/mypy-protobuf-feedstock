@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mypy-protobuf-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mypy-protobuf-{{ version }}.tar.gz
   sha256: 21f270da0a9792a9dac76b0df463c027e561664ab6973c59be4e4d064dfe67dc
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - protoc-gen-mypy = mypy_protobuf.main:main
@@ -21,9 +21,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - protobuf >=4.23.4
     - types-protobuf >=3.19.5
 
@@ -37,6 +37,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/dropbox/mypy-protobuf
