@@ -11,7 +11,7 @@ source:
   sha256: e200c833645dcfdfe8aa47f4a33d3a4b01b6be5b9a58ddbfc441329d5b679274
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - protoc-gen-mypy = mypy_protobuf.main:main
@@ -24,8 +24,8 @@ requirements:
     - python {{ python_min }}
   run:
     - python >={{ python_min }}
-    - protobuf >=4.23.4
-    - types-protobuf >=3.19.5
+    - protobuf >=6.32
+    - types-protobuf >=6.32
 
 test:
   imports:
