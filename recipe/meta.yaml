@@ -1,5 +1,5 @@
 {% set name = "mypy-protobuf" %}
-{% set version = "4.0.0" %}
+{% set version = "5.1.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: e200c833645dcfdfe8aa47f4a33d3a4b01b6be5b9a58ddbfc441329d5b679274
+  sha256: 8493758852a9cdc075a11dbe96c6e37ea2feba5fd5f33ef7442b9a275322a94c
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - protoc-gen-mypy = mypy_protobuf.main:main
